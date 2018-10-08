@@ -1,0 +1,28 @@
+{
+  "excludeFiles": [
+    ".git",
+    "yaspeller",
+    "node_modules",
+    "lib",
+    "plugin",
+    "test",
+    "js",
+    "yaspeller_report.html"
+  ],
+  "format": "html",
+  "lang": "en",
+  "fileExtensions": [
+    ".html"
+  ],
+  "report": ["console", "html"],
+  "dictionary": [
+    "Tomáš",
+    "Konrády"
+  ],
+  "ignoreText": [
+  ],
+  "ignoreTags": ["code", "script", "aside"],
+  "ignoreUrls": true,
+  "findRepeatWords": true,
+  "maxRequests": 5
+}

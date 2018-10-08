@@ -1,0 +1,147 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+        <title>[Presentation name]</title>
+
+        <link rel="stylesheet" href="css/reveal.css">
+        <link rel="stylesheet" href="css/theme/lunde.css">
+
+        <link rel="shortcut icon" type="image/x-icon" href="/images/favicon-lunde.ico">
+
+        <!-- Theme used for syntax highlighting of code -->
+        <link rel="stylesheet" href="lib/css/github.css">
+
+        <!-- Printing and PDF exports -->
+        <script>
+            var link = document.createElement( 'link' );
+            link.rel = 'stylesheet';
+            link.type = 'text/css';
+            link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+            document.getElementsByTagName( 'head' )[0].appendChild( link );
+        </script>
+    </head>
+    <body>
+        <div class="reveal">
+            <div class="slides">
+                <section class="slide--front">
+                    <h1 class="slide-heading" style="font-size: 2.6em;">Presentation Name</h1>
+                    <h2 class="slide-subheading">Subheading</h2>
+
+                    <p class="slide-author">
+                            <span class="slide-name">Tomáš Konrády</span> · <a href="https://twitter.com/konnnyy"><span class="twitter">@konnnyy</span></a> · Name of the Event
+                    </p>
+
+                    <p class="slide-company"><a href="https://lundegaard.eu">lundegaard.eu</a></p>
+                </section>
+                <section>
+                    <h2>Contents</h2>
+                    <ul>
+                        <li>Section 1</li>
+                        <li class="fragment">Section 2</li>
+                        <li class="fragment">Section 3</li>
+                    </ul>
+                </section>
+                <section>
+                    <h1>New section</h1>
+                </section>
+
+                <section data-background="images/three.gif">
+                    <h1><span class="image-text">New <strong>section</strong> with image background!</span></h1>
+                </section>
+
+                <section>
+                    <h2>References</h2>
+                    <ul>
+                        <li><a href="https://github.com/lundegaard/react-union">lundegaard/react-union</a></li>
+                        <li><a href="https://twitter.com/LundegaardJerry">@LundegaardJerry</a></li>
+                        <li><a href="https://twitter.com/konnnyy">@konnnyy</a></li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Section with multiple images</h2>
+                    <section>
+                        <img src="images/singlepage.jpg" class="img" alt="Single Page - google" />
+                    </section>
+                    <section>
+                        <img src="images/spotify.png" class="img" alt="Single Page - spotify" />
+                    </section>
+                    <section>
+                        <img src="images/youtube.png" class="img" alt="Single Page - youtube" />
+                    </section>
+                </section>
+
+                <section>
+                    <h2>Code</h2>
+                    <section>
+                        <pre><code class="html hljs">&#x3C;blockquote&#x3E;
+    A man of my spiritual affecting the human spirit or soul [...]
+
+    &#x3C;button data-toggle=&#x22;tooltip&#x22;
+    data-placement=&#x22;top&#x22;
+    title=&#x22;...was an Irish playwright...&#x22;&#x3E;
+        George Bernard Shaw
+    &#x3C;/button&#x3E;
+&#x3C;/blockquote&#x3E;
+&lt;script src=&quot;/assets/bundle.js&quot;&gt;&lt;/script&gt;</code></pre>
+
+                    </section>
+                </section>
+
+                <section>
+                    <h2>Double code</h2>
+                    <div class="double-code">
+                        <pre class="double-code-left"><code class="hljs html">&#x3C;div class=&#x22;my-module&#x22;&#x3E;
+    This container contains
+    the modal code.
+&#x3C;/div&#x3E;
+&#x3C;div class=&#x22;modal&#x22;&#x3E;
+    I am content of the modal.
+&#x3C;/div&#x3E;
+&#x3C;div class=&#x22;backdrop&#x22;&#x3E;&#x3C;/div&#x3E;</code></pre>
+                        <pre class="double-code-right"><code class="hljs css">.my-module {
+    position: fixed;
+    top: 0;
+    left: 0;
+}</code></pre>
+                    </div>
+                </section>
+                <section>
+                    <h2>Dense list</h2>
+                    <ul class="list--sizeDense">
+                        <li>Useful building scripts</li>
+                        <li class="fragment">Monorepo support</li>
+                        <li class="fragment">Possibility of zero-configuration</li>
+                        <li class="fragment">Running proxy over targeted platform</li>
+                    </ul>
+                </section>
+
+
+
+          </div>
+        </div>
+
+
+        <script src="lib/js/head.min.js"></script>
+        <script src="js/reveal.js"></script>
+
+        <script>
+            // More info https://github.com/hakimel/reveal.js#configuration
+            Reveal.initialize({
+                history: true,
+                width: 1024,
+                height: 576,
+                // More info https://github.com/hakimel/reveal.js#dependencies
+                dependencies: [
+                    { src: 'plugin/markdown/marked.js' },
+                    { src: 'plugin/markdown/markdown.js' },
+                    { src: 'plugin/notes/notes.js', async: true },
+                    { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+                ]
+            });
+        </script>
+    </body>
+</html>
