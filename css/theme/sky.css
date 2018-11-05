@@ -240,6 +240,11 @@ body {
   border: 0;
   box-shadow: none; }
 
+.reveal section img.small-no-background {
+  margin: 0;
+  background: none;
+  height: 1em; }
+
 .reveal a img {
   -webkit-transition: all .15s linear;
   -moz-transition: all .15s linear;

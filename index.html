@@ -1,147 +1,620 @@
 <!doctype html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-        <title>[Presentation name]</title>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-        <link rel="stylesheet" href="css/reveal.css">
-        <link rel="stylesheet" href="css/theme/lunde.css">
+    <title>react-union - way to open source</title>
 
-        <link rel="shortcut icon" type="image/x-icon" href="/images/favicon-lunde.ico">
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/lunde.css">
 
-        <!-- Theme used for syntax highlighting of code -->
-        <link rel="stylesheet" href="lib/css/github.css">
+    <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico">
 
-        <!-- Printing and PDF exports -->
-        <script>
-            var link = document.createElement( 'link' );
-            link.rel = 'stylesheet';
-            link.type = 'text/css';
-            link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
-            document.getElementsByTagName( 'head' )[0].appendChild( link );
-        </script>
-    </head>
-    <body>
-        <div class="reveal">
-            <div class="slides">
-                <section class="slide--front">
-                    <h1 class="slide-heading" style="font-size: 2.6em;">Presentation Name</h1>
-                    <h2 class="slide-subheading">Subheading</h2>
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="lib/css/github.css">
 
-                    <p class="slide-author">
-                            <span class="slide-name">Tomáš Konrády</span> · <a href="https://twitter.com/konnnyy"><span class="twitter">@konnnyy</span></a> · Name of the Event
-                    </p>
+    <!-- Printing and PDF exports -->
+    <script>
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+        document.getElementsByTagName('head')[0].appendChild(link);
+    </script>
+</head>
 
-                    <p class="slide-company"><a href="https://lundegaard.eu">lundegaard.eu</a></p>
-                </section>
-                <section>
-                    <h2>Contents</h2>
+<body>
+    <div class="reveal">
+        <div class="slides">
+            <section data-background="images/front.png" data-background-size="100% 100%">
+                <aside class="notes">
                     <ul>
-                        <li>Section 1</li>
-                        <li class="fragment">Section 2</li>
-                        <li class="fragment">Section 3</li>
+                        <li>welcome</li>
+                        <li>fullstack developer, java, react, participated on liferay project with React FE</li>
+                        <li>last year presentation</li>
+                        <li>request to make it open source, since january</li>
+                        <li>explaint what it is about, why is it useful</li>
+                        <li>does anyone know it?</li>
                     </ul>
-                </section>
-                <section>
-                    <h1>New section</h1>
-                </section>
-
-                <section data-background="images/three.gif">
-                    <h1><span class="image-text">New <strong>section</strong> with image background!</span></h1>
-                </section>
-
-                <section>
-                    <h2>References</h2>
+                </aside>
+            </section>
+            <section>
+                <h2>Contents</h2>
+                <ul>
+                    <li>React and Liferay</li>
+                    <li class="fragment">react-union toolset</li>
+                    <li class="fragment">Demo</li>
+                </ul>
+                <aside class="notes">
                     <ul>
-                        <li><a href="https://github.com/lundegaard/react-union">lundegaard/react-union</a></li>
-                        <li><a href="https://twitter.com/LundegaardJerry">@LundegaardJerry</a></li>
-                        <li><a href="https://twitter.com/konnnyy">@konnnyy</a></li>
+                        <li>react in combination with liferay, why react-union might be useful</li>
+                        <li>what tools react-union provides</li>
+                        <li>example project</li>
                     </ul>
-                </section>
+                </aside>
+            </section>
 
+            <!-- React and Liferay -->
+            <section data-background="images/motivation2.gif">
+                <h1><span class="image-text">Motivation</span></h1>
+                <aside class="notes">
+                        <ul>
+                            <li>what it the motivation for using react on Liferay projects</li>
+                        </ul>
+                    </aside>
+            </section>
+
+            <section data-background="images/tyrion.gif">
+                <h1>React is awesome!</h1>
+            </section>
+            <section>
+                <h2>Motivation to use React with Liferay</h2>
+                <ul class="list--sizeDense">
+                    <li>Developers want it</li>
+                    <li class="fragment">Customers want it </li>
+                    <li class="fragment">Provides modularity and reusability</li>
+                    <li class="fragment">Modern and pretty fast</li>
+                </ul>
+                <aside class="notes">
+                    <ul>
+                        <li>developers prefer react over other libraries and frameworks</li>
+                        <li>luckily customers want it too</li>
+                        <li>modular library</li>
+                        <li>possibility to reuse a lot of code</li>
+                        <li>fast and modern tech.</li>
+                    </ul>
+                </aside>
+            </section>
+            <section>
+                <h3>Are there any obstacles using React with Liferay?</h3>
+            </section>
+
+            <section data-background="images/shake_head.gif">
+                <h1 class="image-text">No</h1>
+            </section>
+
+            <section>
+                <h2>Can be done simply</h2>
+                <div class="fragment">
+                    <span>Create react app</span>
+                </div>
+                <div class="fragment">
+                    Build a JS bundle
+                </div>
+                <div class="fragment">
+                    Place your DOM mark in LF
+                </div>
+                <div class="fragment">
+                    Include in JS bundle LF
+                </div>
+                <aside class="notes">
+                    <ul>
+                        <li>create the app</li>
+                        <li>build js bundle</li>
+                        <li>place the DOM mark, portlet, webcontent or a template of some sort</li>
+                        <li>include in LF</li>
+                    </ul>
+                </aside>
+            </section>
+
+            <section>
+                <h3>Where is the catch?</h3>
+                <h2 class="fragment fade-in">For a single react app in Liferay</h2>
+                <span class="fragment fade-in"><strong>No catch</strong></span>
+                <aside class="notes">
+                    <ul>
+                        <li>But is that really a good approach ? Is`t there any catch?</li>
+                        <li>for single app - OK</li>
+                    </ul>
+                </aside>
+            </section>
+            <section data-background="images/multiple-apps.png" data-background-size="70% 80%">
+                <h3 class="image-text">But for multiple react apps?</h3>
+                <aside class="notes">
+                    <ul>
+                        <li>imagine you have multiple apps, one page, among several pages  </li>
+                        <li>start dealing with issues that will arise</li>
+                        <li>like</li>
+                    </ul>
+                </aside>
+            </section>
+            <section>
+                <h2>multiple react apps</h2>
                 <section>
-                    <h2>Section with multiple images</h2>
-                    <section>
-                        <img src="images/singlepage.jpg" class="img" alt="Single Page - google" />
-                    </section>
-                    <section>
-                        <img src="images/spotify.png" class="img" alt="Single Page - spotify" />
-                    </section>
-                    <section>
-                        <img src="images/youtube.png" class="img" alt="Single Page - youtube" />
-                    </section>
-                </section>
-
-                <section>
-                    <h2>Code</h2>
-                    <section>
-                        <pre><code class="html hljs">&#x3C;blockquote&#x3E;
-    A man of my spiritual affecting the human spirit or soul [...]
-
-    &#x3C;button data-toggle=&#x22;tooltip&#x22;
-    data-placement=&#x22;top&#x22;
-    title=&#x22;...was an Irish playwright...&#x22;&#x3E;
-        George Bernard Shaw
-    &#x3C;/button&#x3E;
-&#x3C;/blockquote&#x3E;
-&lt;script src=&quot;/assets/bundle.js&quot;&gt;&lt;/script&gt;</code></pre>
-
-                    </section>
-                </section>
-
-                <section>
-                    <h2>Double code</h2>
-                    <div class="double-code">
-                        <pre class="double-code-left"><code class="hljs html">&#x3C;div class=&#x22;my-module&#x22;&#x3E;
-    This container contains
-    the modal code.
-&#x3C;/div&#x3E;
-&#x3C;div class=&#x22;modal&#x22;&#x3E;
-    I am content of the modal.
-&#x3C;/div&#x3E;
-&#x3C;div class=&#x22;backdrop&#x22;&#x3E;&#x3C;/div&#x3E;</code></pre>
-                        <pre class="double-code-right"><code class="hljs css">.my-module {
-    position: fixed;
-    top: 0;
-    left: 0;
-}</code></pre>
-                    </div>
+                    <h2><strong>inefficient loading of resources</strong></h2>
+                    <div class="fragment fade-in">vendor libraries</div>
+                    <div class="fragment fade-in">common components, js fragments</div>
+                    <aside class="notes">
+                        <ul>
+                            <li>resource loading inefficiencies</li>
+                            <li>your vendor libraries, redux, multiple times</li>
+                            <li>custom components</li>
+                        </ul>
+                    </aside>
                 </section>
                 <section>
-                    <h2>Dense list</h2>
+                    <h2><strong>no easy way to share state among react apps</strong></h2>
+                    <div class="fragment fade-in">apps are isolated</div>
+                    <aside class="notes">
+                        <ul>
+                            <li>no implicit possibility to share state, data</li>
+                            <li>because apps are isolated from each other</li>
+                        </ul>
+                    </aside>
+                </section>
+                <section>
+                    <h2><strong>no easy way to communicate among apps</strong></h2>
+                    <div class="fragment fade-in">apps are isolated</div>
+                    <aside class="notes">
+                        <ul>
+                            <li>similar applies to communication among apps, not possible, same reason</li>
+                            <li>which is app isolation</li>
+                        </ul>
+                    </aside>
+                </section>
+                <section>
+                    <h2><strong>duplicities</strong></h2>
+                    <div class="fragment fade-in">components</div>
+                    <div class="fragment fade-in">app configuration</div>
+                    <aside class="notes">
+                        <ul>
+                            <li>Other annoying thing could be code duplicities</li>
+                            <li>of component, or even app configuration</li>
+                        </ul>
+                    </aside>
+                </section>
+                <section>
+                    <h2><strong>in summary</strong></h2>
+                    <div class="fragment fade-in">a lot of redundant tasks</div>
+                    <aside class="notes">
+                        <ul>
+                            <li>a lot of effort to create efficient dev stack</li>
+                        </ul>
+                    </aside>
+                </section>
+            </section>
+
+            <section data-background="images/how.gif">
+                <h3 class="image-text">So how to tackle that?</h3>
+                <h2 class="fragment fade-in"><span class="image-text"><strong>react-union could be the solution</strong></span></h2>
+            </section>
+            <section>
+                <h3>What is react-union?</h3>
+            </section>
+            <section>
+                <h2>What is react-union?</h2>
+                <section data-transition="fade-in fade-out">
+                    <img src="images/rn_01.png" class="img" alt="react-union" />
+                </section>
+                <section data-transition="fade-in fade-out">
+                    <img src="images/rn_02.png" class="img" alt="react-union" />
+                </section>
+                <section data-transition="fade-in fade-out">
+                    <img src="images/rn_03.png" class="img" alt="react-union" />
+                </section>
+                <section data-transition="fade-in fade-out">
+                    <img src="images/rn_04.png" class="img" alt="react-union" />
+                </section>
+                <section data-transition="fade-in fade-out">
+                    <img src="images/rn_05.png" class="img" alt="react-union" />
+                </section>
+                <section data-transition="fade-in fade-out">
+                    <img src="images/rn_06.png" class="img" alt="react-union" />
+                </section>
+                <aside class="notes">
+                    <ul>
+                        <li>solution, finds apps on a page</li>
+                        <li>call them as widgets, refer as such, from now</li>
+                        <li>combine widget into a single app</li>
+                        <li>forming single virtual DOM</li>
+                        <li>solution to all troubles</li>
+                    </ul>
+                </aside>
+            </section>
+            <section>
+                <h2>How can react-union help?</h2>
+                <section>
+                    <h2><strong>single virtual DOM</strong></h2>
+                    <div class="fragment fade-in">shared app state</div>
+                    <div class="fragment fade-in">shared react context</div>
+                    <aside class="notes">
+                        <ul>
+                            <li>thanks to SVD - able to share data</li>
+                            <li>redux state, context</li>
+                            <li>initial data, theming, localization</li>
+                        </ul>
+                    </aside>
+                </section>
+                <section>
+                    <h2><strong>simple integration with Liferay</strong></h2>
+                    <div class="fragment fade-in">initial data from Liferay</div>
+                    <aside class="notes">
+                        <ul>
+                            <li>integration with LF is easy</li>
+                            <li>using LF AMD loader, but theme could be used as well</li>
+                            <li>provides initial data</li>
+                        </ul>
+                    </aside>
+                </section>
+                <section>
+                    <h2><strong>webpack configuration</strong></h2>
+                    <div class="fragment fade-in">HMR</div>
+                    <div class="fragment fade-in">proxy</div>
+                    <aside class="notes">
+                        <ul>
+                            <li>another feture - preconfigured webpack</li>
+                            <li>develop over dev server without LF</li>
+                            <li>develop over running LF instacne with HMR</li>
+                            <li>code splitting</li>
+                        </ul>
+                    </aside>
+                </section>
+            </section>
+
+            <section>
+                <h2>High level architecture</h2>
+                <section data-transition-speed="fast" data-transition="fade-in fade-out">
+                    <img src="images/arch02.png" class="img" alt="react-union architecture" />
+                </section>
+                <section data-transition-speed="fast" data-transition="fade-in fade-out">
+                    <img src="images/arch03.png" class="img" alt="react-union architecture" />
+                </section>
+                <section data-transition-speed="fast" data-transition="fade-in fade-out">
+                    <img src="images/arch04.png" class="img" alt="react-union architecture" />
+                </section>
+                <section data-transition-speed="fast" data-transition="fade-in fade-out">
+                    <img src="images/arch05.png" class="img" alt="react-union architecture" />
+                </section>
+                <section data-transition-speed="fast" data-transition="fade-in fade-out">
+                    <img src="images/arch06.png" class="img" alt="react-union architecture" />
+                </section>
+                <section data-transition-speed="fast" data-transition="fade-in fade-out">
+                    <img src="images/arch07.png" class="img" alt="react-union architecture" />
+                </section>
+                <section data-transition-speed="fast" data-transition="fade-in fade-out">
+                    <img src="images/arch08.png" class="img" alt="react-union architecture" />
+                </section>
+                <section data-transition-speed="fast" data-transition="fade-in fade-out">
+                    <img src="images/arch09.png" class="img" alt="react-union architecture" />
+                </section>
+                <section data-transition-speed="fast" data-transition="fade-in fade-out">
+                    <img src="images/arch10.png" class="img" alt="react-union architecture" />
+                </section>
+                <section data-transition-speed="fast" data-transition="fade-in fade-out">
+                    <img src="images/arch11.png" class="img" alt="react-union architecture" />
+                </section>
+                <section data-transition-speed="fast" data-transition="fade-in fade-out">
+                    <img src="images/arch12.png" class="img" alt="react-union architecture" />
+                </section>
+                <section data-transition-speed="fast" data-transition="fade-in fade-out">
+                    <img src="images/arch13.png" class="img" alt="react-union architecture" />
+                </section>
+                <section data-transition-speed="fast" data-transition="fade-in fade-out">
+                    <img src="images/arch14.png" class="img" alt="react-union architecture" />
+                </section>
+                <aside class="notes">
+                    <ul>
+                        <li>essential part - Union comp.</li>
+                        <li>Root of react app which encapsulates widgets</li>
+                        <li>on LF - define DOM marks and widgets descriptors</li>
+                        <li>include loading of Union component</li>
+                        <li>after init it scans current page and looks for widget descriptors</li>
+                        <li>initializes widgets on proper place using react portals under the hood</li>
+                        <li>preconfigured webpack which compile into several JS files</li>
+                        <li>can be loaded by AMD loader</li>
+                    </ul>
+                </aside>
+            </section>
+
+            <!-- react-union toolset -->
+            <section>
+                <h2>What's provided for you</h2>
+                <ul class="list--sizeDense">
+                    <li>Union component</li>
+                    <li class="fragment">utilities</li>
+                    <li class="fragment">react-union-scripts</li>
+                    <li class="fragment">boilerplates</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Union component</h2>
+                <!-- <section>
                     <ul class="list--sizeDense">
-                        <li>Useful building scripts</li>
-                        <li class="fragment">Monorepo support</li>
-                        <li class="fragment">Possibility of zero-configuration</li>
-                        <li class="fragment">Running proxy over targeted platform</li>
+                        <li>Root component</li>
+                        <li class="fragment">scan pages and initialize widgets</li>
+                        <li class="fragment">pass initial data</li>
                     </ul>
+                    <aside class="notes">
+                        <ul>
+                            <li>lets recap</li>
+                            <li>the root component</li>
+                            <li>responsible for finding widget descriptors and rendering of widgets</li>
+                            <li>thus creating single virtual DOM</li>
+                            <li>passes initial data using react context api</li>
+                            <li>reinitializes itself when navigation is performed</li>
+                        </ul>
+                    </aside>
+                </section> -->
+                <section>
+                    <pre><code class="html hljs">
+                        &#x3C;Union routes={routes} /&#x3E;
+                    </code></pre>
+
+                    <aside class="notes">
+                        <ul>
+                            <li>one required property called routes</li>
+                        </ul>
+                    </aside>
                 </section>
 
+                <section>
+                    <pre><code class="html hljs">
+
+    const routes = [
+        {
+            path:'maps',
+            getComponent(done) {
+                import('../widgets/Maps').then(done);
+            },
+        },
+        {
+            path:'search',
+            getComponent(done) {
+                import('../widgets/Search').then(done);
+            },
+        },
+    ]
+                    </code></pre>
+                    <aside class="notes">
+                            <ul>
+                                <li>an array of objects describing implemented widgets</li>
+                                <li>and a render path</li>
+                                <li>path match - widget descriptor</li>
+                            </ul>
+                        </aside>
+                </section>
+                <section>
+                    <pre><code class="html hljs">
+
+    import { justRender } from 'react-union';
+
+    justRender(&#x3C;Union routes={routes} /&#x3E;);
+    
+                    </code></pre>
+                    <aside class="notes">
+                        <ul>
+                            <li>In order to render the Union component, we provide justRender</li>
+                            <li>replaces render method from ReactDOM</li>
+                            <li>adding dynamically a real DOM tag into whicih Union component is rendered </li>
+                        </ul>
+                    </aside>
+                </section>
+
+                <section>
+                    <pre><code class="html hljs">
+
+    const Root = () => (
+        &#x3C;StoreProvider store={store}&#x3E;
+            &#x3C;IntlProvider locale={locale}&#x3E;
+                &#x3C;ThemeProvider theme={theme}&#x3E;
+                    &#x3C;Union routes={routes} /&#x3E;
+                &#x3C;/ThemeProvider&#x3E;
+            &#x3C;/IntlProvider&#x3E;
+        &#x3C;/StoreProvider&#x3E;
+    );
+        
+                        </code></pre>
+                        <aside class="notes">
+                            <ul>
+                                <li>decorate the Union component </li>
+                            </ul>
+                        </aside>
+                </section>
+            </section>
+
+            <!-- <section>
+                <h2>utilities</h2>
+                <ul class="list--sizeDense">
+                    <li>justRender</li>
+                    <li class="fragment">justUnmountComponentAtNode</li>
+                    <li class="fragment">withWidgetContext</li>
+                </ul>
+                <aside class="notes">
+                        <ul>
+                            <li>2 utility functions</li>
+                            <li>1 HoC</li>
+                            <li>mentioned justRender</li>
+                            <li>justUnmountComponentAtNode - destruction of DOM mark</li>
+                            <li>HoC withWidgetContext</li>
+                        </ul>
+                    </aside>
+            </section> -->
+
+            <section>
+                <h2>withWidgetContext</h2>
+                <section>
+                    <pre><code class="hljs html">
+<!-- Widget descriptor -->
+&#x3C;script data-union-widget="myCoolWidget" data-union-container="myCoolWidget"
+type="application/json"&#x3E;
+    {
+        "home": "www.example.com",
+        "api": "/api"
+    }
+&#x3C;/script&#x3E;
+                        </code></pre>
+                    <pre><code class="hljs js">
+import { withWidgetContext } from 'react-union';
+
+const NestedComponent = ({ namespace, data: { home, api } }) => (
+    &#x3C;div&#x3E;
+       ...
+    &#x3C;/div&#x3E;
+);
+export default withWidgetContext(NestedComponent);
+                        </code></pre>
+                        <aside class="notes">
+                                <ul>
+                                    <li>upper part a widget descriptor, JSON as initial data</li>
+                                    <li>available as props in Widget's Root component</li>
+                                    <li>but not in nested components</li>
+                                    <li>so the purpose of withWidgetContext is to make the data available in nested components</li>
+                                </ul>
+                            </aside>
+                </section>
+                <section>
+                    <h4>pass common data</h4>
+                    <pre><code class="hljs html"><!-- Common data descriptor -->
+&#x3C;script data-union-common type="application/json"&#x3E;
+{
+    "customField": "custom field",
+    "urls": {
+        "home": "www.example.com",
+        "api": "/api"
+    }
+}
+&#x3C;/script&#x3E;</code></pre>
+                    <aside class="notes">
+                        <ul>
+                            <li>appart from widget descriptor there is a common data descriptor</li>
+                            <li>data for all widgets</li>
+                        </ul>
+                    </aside>
+                </section>
+            </section>
 
 
-          </div>
+            <section>
+                <h2>react-union-scripts</h2>
+                <ul class="list--sizeDense">
+                    <li class="fragment">preconfigured webpack</li>
+                    <li class="fragment">extension points</li>
+                    <li class="fragment">devserver, proxy, build optimizations, test</li>
+                    <li class="fragment">supports yarn workspaces</li>
+                </ul>
+                <aside class="notes">
+                    <ul>
+                        <li>I have talked about preconfigured webpack</li>
+                        <li>scripts with such config are distributed in react-union-scripts module</li>
+                        <li>there are extensions point by which you can alter the webpack config as you need</li>
+                        <li>by default devserver, proxy settings, build optimizations and test setup</li>
+                        <li>yarn workspaces</li>
+                    </ul>
+                </aside>
+            </section>
+
+            <section>
+                <h2>boilerplates</h2>
+                <ul class="list--sizeDense">
+                    <li class="fragment">basic</li>
+                    <li class="fragment">monorepo</li>
+                    <li class="fragment">liferay</li>
+                </ul>
+                <aside class="notes">
+                    <ul>
+                        <li>another thing you can find</li>
+                        <li>basic - the most simplest usage possible</li>
+                        <li>monorepo - yarn project structure</li>
+                        <li>liferay - contains portlet places a widget on a page, amd-loader, react-union project with monorepo</li>
+                        <li>first 2 examples are not dependent on liferay bacause the solution is applicable to any other CMS platform</li>
+                    </ul>
+                </aside>
+            </section>
+            <section>
+                <h2>Documentation</h2>
+                <h3><a href="https://react-union.org">react-union.org</a></h3>
+                <aside class="notes">
+                    <ul>
+                        <li>the documentation page should contain most informations needed</li>
+                    </ul>
+                </aside>
+            </section>
+            <section data-background="images/demo.gif">
+                <h1 class="image-text">Demo</h1>
+                <aside class="notes">
+                    <ul>
+                        <li>lets have a look at some code</li>
+                    </ul>
+                </aside>
+            </section>
+            <section>
+                <h2>What's coming</h2>
+                <p>redux-extensible-store</p>
+                <p>generators</p>
+                <p>more boilerplates</p>
+                <aside class="notes">
+                    <ul>
+                        <li>what do we plan next?</li>
+                        <li>redux-extensible-store - already on github, but in the first version that supports only thunks and sagas, second version which we are preparing will support redux-observables and namespacing</li>
+                        <li>set of generators for easy application bootsstrap and widget creations</li>
+                        <li>more examples - one of them will how to use the redux-extensible-store module with namespaces</li>
+                    </ul>
+                </aside>
+            </section>
+            <section>
+                <h2>References</h2>
+                <p>github: <a href="https://github.com/lundegaard/react-union">github.com/lundegaard/react-union</a></p>
+                <p>npm: <a href="https://www.npmjs.com/package/react-union">npmjs.com/package/react-union</a></p>
+                <p>documentation: <a href="https://react-union.org">react-union.org</a></p>
+                <p>demo: <a href="https://github.com/jamescoq/devcon-react-union-demo">github.com/jamescoq/devcon-react-union-demo</a></p>
+            </section>
+            <section data-background="images/questions.gif">
+                <h1 class="image-text">Q&A</h1>
+                <h2><span class="image-text"><strong>jakub.kohout@lundegaard.eu</strong></span></h2>
+            </section>
+            <section data-background="images/last.png" data-background-size="100% 100%">
+                <aside class="notes">
+                    <ul>
+                        <li>please rate</li>
+                        <li>give us a start on github</li>
+                    </ul>
+                </aside>
+            </section>
         </div>
+    </div>
 
 
-        <script src="lib/js/head.min.js"></script>
-        <script src="js/reveal.js"></script>
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
 
-        <script>
-            // More info https://github.com/hakimel/reveal.js#configuration
-            Reveal.initialize({
-                history: true,
-                width: 1024,
-                height: 576,
-                // More info https://github.com/hakimel/reveal.js#dependencies
-                dependencies: [
-                    { src: 'plugin/markdown/marked.js' },
-                    { src: 'plugin/markdown/markdown.js' },
-                    { src: 'plugin/notes/notes.js', async: true },
-                    { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
-                ]
-            });
-        </script>
-    </body>
+    <script>
+        // More info https://github.com/hakimel/reveal.js#configuration
+        Reveal.initialize({
+            history: true,
+            width: 1024,
+            height: 576,
+            // More info https://github.com/hakimel/reveal.js#dependencies
+            dependencies: [
+                { src: 'plugin/markdown/marked.js' },
+                { src: 'plugin/markdown/markdown.js' },
+                { src: 'plugin/notes/notes.js', async: true },
+                { src: 'plugin/highlight/highlight.js', async: true, callback: function () { hljs.initHighlightingOnLoad(); } }
+            ]
+        });
+    </script>
+</body>
+
 </html>

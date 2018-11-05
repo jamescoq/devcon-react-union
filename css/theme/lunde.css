@@ -33,7 +33,7 @@ body {
 
 ::selection {
   color: #fff;
-  background: #26351C;
+  background: #26351c;
   text-shadow: none; }
 
 .reveal .slides > section,
@@ -244,6 +244,11 @@ body {
   border: 0;
   box-shadow: none; }
 
+.reveal section img.small-no-background {
+  margin: 0;
+  background: none;
+  height: 1em; }
+
 .reveal a img {
   -webkit-transition: all .15s linear;
   -moz-transition: all .15s linear;
@@ -307,6 +312,9 @@ body {
   .reveal .slides section li.fragment.visible {
     opacity: 1; }
 
+.reveal .slides section div {
+  margin-bottom: 0.5em; }
+
 .reveal ul li {
   font-size: 1.777em;
   margin-bottom: 0.7em;
@@ -314,7 +322,7 @@ body {
 
 .reveal ul.list--sizeDense li {
   font-size: 1em;
-  margin-bottom: .4em; }
+  margin-bottom: 0.4em; }
 
 .reveal a {
   line-height: 1.3em;
@@ -323,13 +331,15 @@ body {
     text-decoration: underline; }
 
 .reveal h1 {
-  position: relative; }
+  position: relative;
+  font-weight: 700; }
   .reveal h1 a:hover {
     text-decoration: none; }
 
 .reveal h2 {
   position: relative;
-  opacity: 0.6; }
+  opacity: 1;
+  font-weight: 900; }
   .reveal h2 a:hover {
     text-decoration: none; }
   .reveal h2:after {
@@ -342,7 +352,16 @@ body {
     background: #009fe3;
     content: ''; }
 
-.reveal a, .reveal p, .reveal span, .reveal h1, .reveal h2, .reveal h3, .reveal h4 {
+.reveal h3 {
+  font-weight: 900; }
+
+.reveal a,
+.reveal p,
+.reveal span,
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4 {
   letter-spacing: 0.0625em; }
 
 .reveal strong {
@@ -367,11 +386,13 @@ body {
 
 .reveal .slide--front {
   background-color: #00adef; }
-  .reveal .slide--front a, .reveal .slide--front a:hover {
+  .reveal .slide--front a,
+  .reveal .slide--front a:hover {
     color: #fff;
     font-weight: bold; }
   .reveal .slide--front h2 {
-    opacity: 1; }
+    opacity: 1;
+    font-weight: 900; }
     .reveal .slide--front h2:after {
       bottom: 0;
       background: #fff; }
@@ -381,7 +402,7 @@ body {
     padding-bottom: 32px; }
   .reveal .slide--front .slide-author {
     font-size: 0.7em;
-    margin-bottom: .5em; }
+    margin-bottom: 0.5em; }
   .reveal .slide--front .slide-company {
     font-size: 0.5em;
     margin: 0; }
@@ -391,7 +412,7 @@ body {
   line-height: 1.34em; }
   .reveal .image-text strong {
     color: #fff;
-    font-weight: normal;
+    font-weight: 900;
     background-color: rgba(141, 197, 63, 0.5); }
   .reveal .image-text--contrast {
     background-color: rgba(0, 173, 239, 0.8); }
@@ -416,3 +437,10 @@ body {
     font-size: 20px; }
   .reveal .double-code code {
     height: 100%; }
+
+.borderless-image {
+  background: none;
+  border: none;
+  box-shadow: none;
+  height: 50px;
+  margin: 0; }

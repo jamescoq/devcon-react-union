@@ -1,14 +1,14 @@
 {
-  "name": "reveal-js-lundegaard-scaffold",
+  "name": "devcon-react-union",
   "version": "1.0.0",
-  "description": "Reveal.js theme",
+  "description": "Presentation about react-union",
   "main": "js/reveal.js",
   "scripts": {
     "test": "grunt test",
     "start": "grunt serve",
     "css": "grunt css",
     "spell": "yaspeller .",
-    "build": "spell && grunt zip"
+    "build": "grunt zip"
   },
   "dependencies": {
     "express": "4.13.3",
